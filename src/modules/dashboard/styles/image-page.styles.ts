@@ -27,7 +27,6 @@ export const Styles = StyleSheet.create({
   attendText: {color: colors.white, fontWeight: 'bold'},
   VideoBtn: {
     borderColor: colors.red,
-
     backgroundColor: 'rgb(255, 96, 77)',
     padding: 10,
     alignItems: 'center',
