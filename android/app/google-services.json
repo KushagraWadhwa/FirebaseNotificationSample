@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "146657049881",
+    "project_id": "react-native-dev-2a2f9",
+    "storage_bucket": "react-native-dev-2a2f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146657049881:android:9ffe33e91f30d647a55988",
+        "android_client_info": {
+          "package_name": "com.firebasenotificationsample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVyDUTT9izJpG1MpuuCohygCDGGM8wkuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
