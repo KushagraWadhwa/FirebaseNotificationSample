@@ -11,7 +11,7 @@ import {Styles} from '../styles/loggedin-dashboard.styles';
 // import actions from '../../../../redux/actions';
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import {colors} from '../../../core-constants/colors';
-import Video from 'react-native-video';
+import Video, {VideoRef} from 'react-native-video';
 
 interface DashboardProps {
   navigation?: NavigationProp<ParamListBase>;
@@ -128,19 +128,21 @@ const LoggedinDashboard = (props: DashboardProps) => {
               style={{paddingHorizontal: 10}}
             />
           ) : buttonSelected === 3 ? (
-            <Video
-              source={{
-                uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-              }}
-              controls
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                left: 0,
-                bottom: 0,
-              }}
-            />
+            // <Video
+            // ref={VideoRef}
+            //   source={{
+            //     uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+            //   }}
+            //   controls
+            //   style={{
+            //     position: 'absolute',
+            //     top: 0,
+            //     right: 0,
+            //     left: 0,
+            //     bottom: 0,
+            //   }}
+            // />
+            <View />
           ) : null}
         </View>
       )}
