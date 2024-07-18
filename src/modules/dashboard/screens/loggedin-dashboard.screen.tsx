@@ -6,11 +6,12 @@ import {
   Dimensions,
   Image,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {Styles} from '../styles/loggedin-dashboard.styles';
 // import actions from '../../../../redux/actions';
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import {colors} from '../../../core-constants/colors';
+import Video from 'react-native-video';
 
 interface DashboardProps {
   navigation?: NavigationProp<ParamListBase>;
@@ -19,6 +20,8 @@ interface DashboardProps {
 const LoggedinDashboard = (props: DashboardProps) => {
   const [buttonSelected, setButtonSelected] = useState(0);
   const buttonWidth = Dimensions.get('screen').width / 2.5;
+  const ref = useRef();
+
   return (
     <ScrollView style={Styles.mainContainer}>
       <View style={Styles.box}>
@@ -108,13 +111,7 @@ const LoggedinDashboard = (props: DashboardProps) => {
             alignItems: 'center',
           }}>
           {buttonSelected === 1 ? (
-            <Text
-              style={{
-                color: colors.white,
-                textAlign: 'center',
-                width: '50%',
-                marginTop: 30,
-              }}>
+            <Text style={Styles.viewText}>
               {'SYSTEM STATUS IS REMOTLY MONITORED'}
             </Text>
           ) : buttonSelected === 2 ? (
@@ -124,24 +121,18 @@ const LoggedinDashboard = (props: DashboardProps) => {
               source={{
                 uri: 'https://www.shutterstock.com/shutterstock/photos/2447239511/display_1500/stock-vector-realistic-white-cloud-or-fire-smoke-in-the-sky-and-vector-weather-element-on-transparent-background-2447239511.jpg',
               }}
-              style={{paddingHorizontal: 10}}
+              style={Styles.horizontalView}
             />
           ) : buttonSelected === 3 ? (
-            // <Video
-            // ref={VideoRef}
-            //   source={{
-            //     uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-            //   }}
-            //   controls
-            //   style={{
-            //     position: 'absolute',
-            //     top: 0,
-            //     right: 0,
-            //     left: 0,
-            //     bottom: 0,
-            //   }}
-            // />
-            <View />
+            <Video
+              ref={ref}
+              source={{
+                uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+              }}
+              style={Styles.video}
+              resizeMode="contain"
+              controls={true}
+            />
           ) : null}
         </View>
       )}

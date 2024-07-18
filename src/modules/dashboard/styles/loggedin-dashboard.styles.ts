@@ -26,4 +26,12 @@ export const Styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 20,
   },
+  viewText: {
+    color: colors.white,
+    textAlign: 'center',
+    width: '50%',
+    marginTop: 30,
+  },
+  horizontalView: {paddingHorizontal: 10},
+  video: {width: '100%', height: 200},
 });
