@@ -1,5 +1,6 @@
 import {
   Dimensions,
+  Image,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -28,6 +29,9 @@ interface ImagePageProps {
 }
 
 const ImagePage = (props: ImagePageProps) => {
+  const [showVideo1, setShowVideo1] = useState(false);
+  const [showVideo2, setShowVideo2] = useState(false);
+
   const buttonWidth = Dimensions.get('screen').width / 2.5;
   return (
     <ScrollView style={{backgroundColor: colors.black}}>
@@ -35,25 +39,18 @@ const ImagePage = (props: ImagePageProps) => {
         <Text style={{color: colors.red, marginHorizontal: 10, fontSize: 20}}>
           {'LIVE Alert'}
         </Text>
-        <View
-          style={{
-            height: Dimensions.get('screen').height / 3.5,
-            borderColor: colors.white,
-            borderWidth: 1,
-            marginTop: 30,
-            marginHorizontal: 10,
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              color: colors.white,
-              textAlign: 'center',
-              width: '50%',
-              marginTop: 30,
-            }}>
-            {'SYSTEM STATUS IS REMOTLY MONITORED'}
-          </Text>
-        </View>
+        {!showVideo1 ? (
+          <Image
+            height={Dimensions.get('screen').height / 4}
+            width={Dimensions.get('screen').width}
+            source={{
+              uri: 'https://www.shutterstock.com/shutterstock/photos/2336393339/display_1500/stock-vector-realistic-isolated-cloud-on-transparent-background-vector-set-of-realistic-isolated-fluffy-cloud-2336393339.jpg',
+            }}
+            style={{paddingHorizontal: 10}}
+          />
+        ) : (
+          <View />
+        )}
         <View
           style={{
             flexDirection: 'row',
@@ -68,6 +65,9 @@ const ImagePage = (props: ImagePageProps) => {
               backgroundColor: 'rgb(60, 169, 108)',
               padding: 10,
               alignItems: 'center',
+            }}
+            onPress={() => {
+              setShowVideo1(false);
             }}>
             <Text style={{color: colors.white, fontWeight: 'bold'}}>
               {'Attend'}
@@ -80,6 +80,9 @@ const ImagePage = (props: ImagePageProps) => {
               backgroundColor: 'rgb(255, 96, 77)',
               padding: 10,
               alignItems: 'center',
+            }}
+            onPress={() => {
+              setShowVideo1(true);
             }}>
             <Text style={{color: colors.white, fontWeight: 'bold'}}>
               {'Video'}
@@ -97,25 +100,18 @@ const ImagePage = (props: ImagePageProps) => {
           }}>
           {'Actioned Alert'}
         </Text>
-        <View
-          style={{
-            height: Dimensions.get('screen').height / 3.5,
-            borderColor: colors.white,
-            borderWidth: 1,
-            marginTop: 30,
-            marginHorizontal: 10,
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              color: colors.white,
-              textAlign: 'center',
-              width: '50%',
-              marginTop: 30,
-            }}>
-            {'SYSTEM STATUS IS REMOTLY MONITORED'}
-          </Text>
-        </View>
+        {!showVideo2 ? (
+          <Image
+            height={Dimensions.get('screen').height / 4}
+            width={Dimensions.get('screen').width}
+            source={{
+              uri: 'https://www.shutterstock.com/shutterstock/photos/1724356075/display_1500/stock-vector-vector-cloud-on-a-transparent-background-realistic-vector-drawing-gradient-mesh-eps-1724356075.jpg',
+            }}
+            style={{paddingHorizontal: 10}}
+          />
+        ) : (
+          <View />
+        )}
         <View
           style={{
             flexDirection: 'row',
@@ -130,6 +126,9 @@ const ImagePage = (props: ImagePageProps) => {
               backgroundColor: 'rgb(60, 169, 108)',
               padding: 10,
               alignItems: 'center',
+            }}
+            onPress={() => {
+              setShowVideo2(false);
             }}>
             <Text style={{color: colors.white, fontWeight: 'bold'}}>
               {'Attend'}
@@ -142,6 +141,9 @@ const ImagePage = (props: ImagePageProps) => {
               backgroundColor: 'rgb(255, 96, 77)',
               padding: 10,
               alignItems: 'center',
+            }}
+            onPress={() => {
+              setShowVideo2(true);
             }}>
             <Text style={{color: colors.white, fontWeight: 'bold'}}>
               {'Video'}

@@ -11,7 +11,6 @@ import {Styles} from '../styles/loggedin-dashboard.styles';
 // import actions from '../../../../redux/actions';
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import {colors} from '../../../core-constants/colors';
-import Video, {VideoRef} from 'react-native-video';
 
 interface DashboardProps {
   navigation?: NavigationProp<ParamListBase>;
